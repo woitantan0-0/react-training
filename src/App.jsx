@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import ColorMessage from "./components/ColorMessage";
+import CssModules from "./components/CssModules";
+import StyledJsx from "./components/StyledJsx";
 
 export const App = () => {
   console.log("再レンダリング:App");
@@ -34,6 +36,8 @@ export const App = () => {
           <span>（ピンク〜）</span>
         </>
       </ColorMessage>
+      <CssModules></CssModules>
+      <StyledJsx></StyledJsx>
       <p>see you!</p>
       <button onClick={clickButton}>count up button</button>
       <p>{num}</p>
