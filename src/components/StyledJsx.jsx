@@ -6,9 +6,7 @@ const StyledJsx = () => {
         <button className="button">Styled Jsx</button>
       </div>
 
-      {/* <style jsx="true">{'
-        // ここにスタイルを書いて、↑にクラス指定して使えるらしい
-        // なんかESLintエラーでビルドできなくてとりあえず断念
+      <style jsx="true">{`
         .container {
           border: solid 1px #aaa;
           border-radius: 20px;
@@ -27,8 +25,13 @@ const StyledJsx = () => {
           border: none;
           padding: 8px;
           border-radius: 8px;
+          &:hover {
+            background-color: #aaa;
+            color: #fff;
+            cursor: pointer;
+          }
         }
-      '}</style> */}
+      `}</style>
     </>
   );
 };

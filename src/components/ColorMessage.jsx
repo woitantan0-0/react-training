@@ -1,5 +1,5 @@
 const ColorMessage = ({ color, children }) => {
-  console.log("再レンダリング:colorMessage");
+  console.log("レンダリング:colorMessage");
 
   // cssオブジェクト
   const styleObject = {
