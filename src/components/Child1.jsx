@@ -1,4 +1,5 @@
 import { useState, memo } from "react";
+import { useCallback } from "react";
 import Child2 from "./Child2";
 import Child3 from "./Child3";
 
@@ -13,17 +14,22 @@ const Child1 = memo((props) => {
 
   const [num, setNum] = useState(1);
 
-  const clickButton = () => {
+  const onClickChildButton = useCallback(() => {
     setNum(num + 1);
-  };
+  }, [num]);
 
-  const { clickResetButton } = props;
+  const onClickResetChild2 = useCallback(() => {
+    console.log("child numの値が変わったよん");
+    setNum(0);
+  }, []);
+
+  const { onClickResetButton } = props;
 
   return (
     <div style={style}>
-      <p onClick={clickButton}>Child1 {num}</p>
-      <button onClick={clickResetButton}>リセット</button>
-      <Child2></Child2>
+      <p onClick={onClickChildButton}>Child1 {num}</p>
+      <button onClick={onClickResetButton}>リセット</button>
+      <Child2 onClickResetChild2={onClickResetChild2}></Child2>
       <Child3></Child3>
     </div>
   );

@@ -23,10 +23,11 @@ export const App = () => {
   };
 
   // リセットボタン押下時のイベント
-  const clickResetButton = useCallback(() => {
+  const onClickResetButton = useCallback(() => {
     setNum(0);
   }, []);
 
+  // 指定配列の値か更新された時に動く
   useEffect(() => {
     alert("初回表示です");
   }, []);
@@ -55,7 +56,7 @@ export const App = () => {
       <p>see you!</p>
       <button onClick={clickButton}>count up button</button>
       <p>{num}</p>
-      <Child1 clickResetButton={clickResetButton}></Child1>
+      <Child1 onClickResetButton={onClickResetButton}></Child1>
       <Child4></Child4>
     </>
   );
